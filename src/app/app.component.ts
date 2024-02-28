@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Book } from './book';
+import { BookService } from './service3/book.service';
 //import { FirstserviceService } from './service1/firstservice.service';
 
 @Component({
@@ -9,6 +12,34 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
  title = 'self_pra';
+  softBooks: Book[] = [];
+
+constructor(private bookservice :BookService){}
+
+getsofBooks(){
+  this.bookservice.getBookFromStore().subscribe(books => this.softBooks= books);
+}
+
+
+ngOnInit()
+ {
+  this.getsofBooks();
+
+}
+
+
+
+
+
+// constructor (private router: Router){}
+// student(){
+//   this.router.navigate(['/student']);
+// }
+}
+
+
+
+
   // mydate : string = "22-feb-2012";
  // _msg: string = "";
 // mydate: any;
@@ -19,4 +50,4 @@ export class AppComponent {
   // getmessage (){
   //   this._msg = this._firstserviceService.getmessage();
   // }
-}
+

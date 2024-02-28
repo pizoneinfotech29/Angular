@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsdToInrPipe } from './pipe1/usd-to-inr.pipe';
@@ -8,6 +8,12 @@ import { DateAndTimePipe } from './pipe2/date-and-time.pipe';
 import { StudentsDataComponent } from './students-data/students-data.component';
 import { StudentsListComponent } from './students-list/students-list.component';
 import { StudentServiceService } from './service2/student-service.service';
+import { StudentComponent } from './student/student.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
+import { BookService } from './service3/book.service';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { TestData } from './testdata';
+
 
 @NgModule({
   declarations: [
@@ -15,15 +21,21 @@ import { StudentServiceService } from './service2/student-service.service';
     UsdToInrPipe,
     DateAndTimePipe,
     StudentsDataComponent,
-    StudentsListComponent
+    StudentsListComponent,
+    StudentComponent,
+    StudentDetailsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    InMemoryWebApiModule.forRoot(TestData)
+
   ],
   providers: [
     provideClientHydration(),
-    StudentServiceService
+    StudentServiceService,
+    BookService
   ],
   bootstrap: [AppComponent]
 })
