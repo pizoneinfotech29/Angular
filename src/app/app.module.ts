@@ -13,6 +13,7 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
 import { BookService } from './service3/book.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TestData } from './testdata';
+import { HeaderComponent } from './includes/header/header.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { TestData } from './testdata';
     StudentsListComponent,
     StudentComponent,
     StudentDetailsComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,32 @@
-
-<h1>Jai Shree Ram</h1>
-
-
-<ul *ngfor="let bk of softBooks">
-
-  ID: {{bk.id}}, Name:{{bk.name}},category: {{bk.category}}
-
+<h1>Getting data from an API</h1>
+<ul>
+  <li *ngFor="let p of posts">
+  {{p.title}}
+  </li>
 </ul>
 
 
 
+
+
+
+
+
+<!-- <app-header></app-header> -->
+<!-- <div class="container">
+  <h2>observable is Angular</h2>
+  <div class="data-list" *ngFor="let x of data">
+    {{x}}
+  </div>
+  <button (click)="getData()" class="btn">Get Data</button>
+</div> -->
+
+
+<!-- <ul *ngfor="let bk of softBooks">
+
+  ID: {{bk.id}}, Name:{{bk.name}},category: {{bk.category}}
+
+</ul> -->
 
 <!--
 <h3>Router Link Example</h3>
