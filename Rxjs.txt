@@ -1,0 +1,42 @@
+29.02.24
+--RxJS
+ ->Reactive programming:- is all about setting up these automatic reactions to changes in your application's data or user interactions, making your       application more responsive and easier to manage. It's like having a kitchen that    anticipates your needs and starts preparing things for you 
+   as soon as you start working on something else.
+  -"reacts to changes" in the context of reactive programming, it means that the program or application is designed to automatically respond to any         modifications or updates that occur in certain data or inputs.
+ ->promises:- This happens in three steps:- 
+              Promise: A promise is like ordering a pizza. It represents an asynchronous operation that will either give you a result or an error 
+              sometime in the future. Promises have .then() and .catch() methods to handle success and error cases respectively.
+              Fulfillment: When the promise successfully delivers the result, it's fulfilled, and you get your data (or pizza!).
+              Rejection: If something goes wrong during the operation, the promise is rejected, and you're informed about the issue.
+   // =====================Promise====================================
+
+    // const promise = new Promise((resolve) => {
+    //   setTimeout(() => {
+    //     resolve('Promise is good');
+    //   }, 2000);
+    // });
+    // promise.then((res) => console.log(res));
+    // promise.catch((err) => console.log(err));
+
+ ->Observables:- used to handle asynchronous operations, like getting data from a server, handling user events, or anything that can happen over time.
+                 Observables are more powerful and flexible. They represent a stream of data over time, allowing for multiple values to be emitted.
+                 Observables can represent asynchronous data streams from various sources like events, timers, HTTP requests, and more.
+                 Observables can be transformed, combined, and manipulated using operators such as map, filter, mergeMap, etc.
+   // =====================observable==================================
+ 
+    // const observable = new Observable((subscribe) => {
+    //   setTimeout(() => {
+    //     subscribe.next('observable is clean');
+    //   }, 1000);
+    // });
+    // observable.subscribe((res) => console.log(res));
+  }
+
+ ->Calling API In Angular | Fetching And Displaying API Data
+  -step1. make a new app [ng new porject_name]
+  -step2. we need to import HttpClientModule to app.module.ts file. so let's import it as like bellow: [src/app/app.module.ts]
+  -step3. we need to create service for http client request. we will create service file and write client http request code. 
+          this service will use in our component file.[ng g s services/post].
+  -step4. Now we have to use this services to our app component.[src/app/app.component.ts].
+  -step5. Now here, we will updated our html file. let's put bellow code: [src/app/app.component.html]
+   
