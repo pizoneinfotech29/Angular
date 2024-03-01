@@ -7,7 +7,6 @@ import { promises } from 'dns';
 //import { FirstserviceService } from './service1/firstservice.service';
 import { Observable } from 'rxjs';
 import { subscribe } from 'diagnostics_channel';
-import { PostService } from './service4/post.service';
 import { response } from 'express';
 
 @Component({
@@ -18,14 +17,7 @@ import { response } from 'express';
 export class AppComponent {
   title = 'self_pra';
 
-   posts : any;
-   /**
-    *
-    */
-   constructor(private post: PostService) {
 
-
-   }
 
     //data:any[] =[];
     //1. CREATE AN observable
@@ -78,10 +70,7 @@ export class AppComponent {
     // });
     // observable.subscribe((res) => console.log(res));
 
-    this.posts.getPosts().subscribe((response: any)=>{
-      this.posts = response;
-      console.log(this.posts);
-    })
+
 
 
   }

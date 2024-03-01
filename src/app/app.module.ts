@@ -14,6 +14,8 @@ import { BookService } from './service3/book.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TestData } from './testdata';
 import { HeaderComponent } from './includes/header/header.component';
+import { TdfComponent } from './tdf/tdf.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,11 +28,13 @@ import { HeaderComponent } from './includes/header/header.component';
     StudentComponent,
     StudentDetailsComponent,
     HeaderComponent,
+    TdfComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     InMemoryWebApiModule.forRoot(TestData)
 
   ],
