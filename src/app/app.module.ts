@@ -15,7 +15,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TestData } from './testdata';
 import { HeaderComponent } from './includes/header/header.component';
 import { TdfComponent } from './tdf/tdf.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -35,6 +35,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     InMemoryWebApiModule.forRoot(TestData)
 
   ],

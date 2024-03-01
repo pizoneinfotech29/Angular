@@ -8,7 +8,7 @@ import { promises } from 'dns';
 import { Observable } from 'rxjs';
 import { subscribe } from 'diagnostics_channel';
 import { response } from 'express';
-
+import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,6 +16,18 @@ import { response } from 'express';
 })
 export class AppComponent {
   title = 'self_pra';
+
+  signupForm = new FormGroup({
+    name: new FormControl(''),
+    age: new FormControl(''),
+    email : new FormControl('')
+  });
+
+
+  handleSubmit(){
+    console.log(this.signupForm.value);
+  }
+
 
 
 
