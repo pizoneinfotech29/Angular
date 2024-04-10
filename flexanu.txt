@@ -1,0 +1,15 @@
+1.remove system generated row from Person Table in Company/person management
+ -> line no. 286 in FilterService
+ ->else if (value == null && recordState != null)
+{
+    if (moduleName == "Person")
+    {
+        query += $" where ([{schema}].[{moduleName}].[Full_Name] != 'System Generated' ) and [{schema}].[{moduleName}].[Record_State] in ('{recordState.Replace(",", "', '")}')";
+    }
+    else
+    {
+        query += $" where [{schema}].[{moduleName}].[Record_State] in ('{recordState.Replace(",", "', '")}')";
+    }
+}    
+
+
