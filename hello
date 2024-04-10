@@ -1,0 +1,13 @@
+else if (modelName != FlexSchemaConstant.Common.SystemTableModelTableRelationship)
+                    {
+                        if (moduleName == "Person")
+                        {
+                            query += $" where ([{schema}].[{moduleName}].[Full_Name] <> 'System Generated' ) and (REPLACE(REPLACE([{schema}].[{moduleName}].[{baseTable.TableRepresentationNavigation.Name}], '|#$|', ''), '  ', ' ') like '%{value}%'  {subQuery})  and  [{schema}].[{moduleName}].[Record_State] in ('{recordState.Replace(",", "', '")}')";
+ 
+                        }
+                        else
+                        {
+                            query += $" where (REPLACE(REPLACE([{schema}].[{moduleName}].[{baseTable.TableRepresentationNavigation.Name}], '|#$|', ''), '  ', ' ') like '%{value}%'  {subQuery})  and  [{schema}].[{moduleName}].[Record_State] in ('{recordState.Replace(",", "', '")}')";
+ 
+                        }
+                    }
